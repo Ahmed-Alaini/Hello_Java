@@ -1,8 +1,6 @@
 package com.example.helloworld;
 
-import static android.content.Intent.makeMainActivity;
-
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -22,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toast.makeText(this, "Oncreate() is called. ", Toast.LENGTH_SHORT).show();
+        findViewById(R.id.button).setOnClickListener(new MyClickListener());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -70,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "onRestart() is called. ", Toast.LENGTH_SHORT).show();
 
     }
-    public void buttonIsClickd(){}
+//    public void buttonIsClicked(View buttonView){
+//        buttonView.setBackgroundColor(Color.RED);
+//        findViewById(R.id.main).setBackgroundColor(Color.YELLOW);
+//        Toast.makeText(this,"The button is clicked!",Toast.LENGTH_SHORT).show();
+//
+//    }
 
 }
